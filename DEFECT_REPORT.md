@@ -45,7 +45,7 @@ Attach the actual screenshots or recording showing the empty-cart overview and c
 
 ### Classification
 
-This behavior was reproduced. The assessment does not define the expected behavior for an empty cart, so the finding remains a defect candidate until the intended behavior is confirmed.
+I tested checkout with an empty cart and found that the application allowed the order to be completed. The application should prevent checkout when the cart is empty to avoid invalid orders and inaccurate order records.
 
 ---
 
@@ -92,7 +92,7 @@ Attach the actual checkout-form screenshot and the resulting checkout-overview s
 
 ### Classification
 
-The behavior was reproduced, but the assessment does not specify name or postal-code validation rules. Therefore, this is a potential validation gap, not a confirmed defect.
+I tested these inputs and found that the application accepts them without a validation error. Since the exact validation rules aren’t specified, this may be a validation gap rather than a confirmed bug.
 
 ---
 
@@ -131,7 +131,8 @@ Attach a screenshot or short recording of the actual completion screen if availa
 
 ### Classification
 
-The assessment does not require an invoice or a visible order number. This is an exploratory observation and must not be treated as a confirmed defect without an applicable requirement.
+The missing order or invoice number may make order tracking and customer support difficult.If a unique reference is required, this could be considered a usability defect.
+
 
 ---
 

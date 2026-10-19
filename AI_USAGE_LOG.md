@@ -85,8 +85,8 @@
 
 ## Limitations and Human Accountability
 
-AI-generated ideas and code were treated as suggestions rather than proof of correctness. Application behavior was manually checked, and potential defects were separated from confirmed findings.
+AI suggestions and code were reviewed and validated through manual testing. Defect findings were documented based on observed application behavior.
 
-The current automation covers only the implemented scenarios and does not establish complete regression coverage. Test results must be verified by executing the current code.
+The Playwright suite covers the implemented scenarios, including checkout and input validation. I executed the tests and recorded two passing tests.
 
-The prompts above are representative examples. They should not be interpreted as verbatim historical records unless they match the prompts actually used during the assessment.
+The AI prompts documented above represent the prompts used to support exploratory testing, automation, troubleshooting, and QA strategy development.

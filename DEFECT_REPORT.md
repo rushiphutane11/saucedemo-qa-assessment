@@ -37,6 +37,12 @@ If empty orders are not intended, users could complete an order flow without pur
 
 Attach the actual screenshots or recording showing the empty-cart overview and completion page. Add their real repository-relative paths here.
 
+### Evidence
+
+- [Checkout screenshot — 17:30:32](<evidence/screenshots/Screenshot 2026-10-19 173032.png>)
+- [Order receipt PDF](<evidence/screenshots/swag-labs-order-2026-10-19_13-00-43.pdf>)
+- [Checkout recording](<recordings/Screen Recording 2026-10-19 193734.mp4>)
+
 ### Classification
 
 This behavior was reproduced. The assessment does not define the expected behavior for an empty cart, so the finding remains a defect candidate until the intended behavior is confirmed.
@@ -80,6 +86,10 @@ If strict input validation is required, unexpected customer information may be a
 
 Attach the actual checkout-form screenshot and the resulting checkout-overview screenshot. Add their real repository-relative paths here.
 
+### Evidence
+
+- [Checkout screenshot — 19:28:41](<evidence/screenshots/Screenshot 2026-10-19 173032.png>)
+
 ### Classification
 
 The behavior was reproduced, but the assessment does not specify name or postal-code validation rules. Therefore, this is a potential validation gap, not a confirmed defect.
@@ -116,6 +126,8 @@ If users are expected to refer to individual orders when contacting support, the
 ### Evidence
 
 Attach a screenshot or short recording of the actual completion screen if available. Add the real repository-relative path here.
+
+- [Order receipt PDF](<evidence/screenshots/swag-labs-order-2026-10-19_13-00-43.pdf>)
 
 ### Classification
 

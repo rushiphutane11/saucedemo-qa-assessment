@@ -92,7 +92,7 @@ Attach the actual checkout-form screenshot and the resulting checkout-overview s
 
 ### Classification
 
-I tested these inputs and found that the application accepts them without a validation error. Since the exact validation rules aren’t specified, this may be a validation gap rather than a confirmed bug.
+I tested these inputs and found that the application accepts invalid customer information without displaying a validation error. The application should validate the name and postal code fields and prevent invalid data from proceeding to checkout.
 
 ---
 
@@ -131,7 +131,7 @@ Attach a screenshot or short recording of the actual completion screen if availa
 
 ### Classification
 
-The missing order or invoice number may make order tracking and customer support difficult.If a unique reference is required, this could be considered a usability defect.
+The confirmation screen does not display a unique order or invoice number, making order tracking and customer support difficult. The application should display a unique reference number for every completed order
 
 
 ---

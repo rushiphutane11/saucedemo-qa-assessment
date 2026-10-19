@@ -39,8 +39,8 @@ Attach the actual screenshots or recording showing the empty-cart overview and c
 
 ### Evidence
 
-- [Checkout screenshot — 17:30:32](<evidence/screenshots/Screenshot 2026-10-19 173032.png>)
-- [Order receipt PDF](<evidence/screenshots/swag-labs-order-2026-10-19_13-00-43.pdf>)
+
+  
 - [Checkout recording](<recordings/Screen Recording 2026-10-19 193734.mp4>)
 
 ### Classification

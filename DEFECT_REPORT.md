@@ -7,12 +7,11 @@
 ## BUG-01: Checkout Can Be Completed With an Empty Cart
 
 **Module:** Cart / Checkout  
-**Status:** Reproduced behavior; defect candidate  
-**Severity:** Medium — provisional  
-**Priority:** P2 — provisional
+**Status:** Reproduced  
+**Severity:** Medium  
+**Priority:** P2
 
 ### Steps to Reproduce
-
 1. Log in using `standard_user`.
 2. Keep the cart empty.
 3. Navigate to checkout.
@@ -22,29 +21,18 @@
 7. Click **Finish**.
 
 ### Expected Result
-
-If the product requirements prohibit empty orders, the application should prevent checkout completion when the cart contains no products.
+The application should prevent checkout completion when the cart is empty.
 
 ### Actual Result
+The application allowed checkout to continue and displayed an order-completion confirmation with item total, tax, and total shown as `$0.00`.
 
-During testing, the application allowed the checkout flow to continue and displayed an order-completion confirmation with item total, tax, and total shown as `$0.00`.
-
-### Potential Impact
-
-If empty orders are not intended, users could complete an order flow without purchasing any products, potentially creating misleading order confirmations or unnecessary order records.
+### Impact
+Completing checkout with an empty cart creates invalid order confirmations and inaccurate order records, causing confusion for users.
 
 ### Evidence
-
-Attach the actual screenshots or recording showing the empty-cart overview and completion page. Add their real repository-relative paths here.
-
-### Evidence
-
-
-  
 - [Checkout recording](<recordings/Screen Recording 2026-10-19 193734.mp4>)
 
 ### Classification
-
 I tested checkout with an empty cart and found that the application allowed the order to be completed. The application should prevent checkout when the cart is empty to avoid invalid orders and inaccurate order records.
 
 ---
@@ -52,17 +40,16 @@ I tested checkout with an empty cart and found that the application allowed the 
 ## BUG-02: Unusual Checkout Input Formats Are Accepted
 
 **Module:** Checkout — Your Information  
-**Status:** Behavior reproduced; defect not confirmed  
-**Severity / Priority:** Pending requirement confirmation
+**Status:** Behavior reproduced  
+**Severity:** Medium  
+**Priority:** P2
 
 ### Test Data
-
 - First Name: `4321`
 - Last Name: `4567`
 - Postal Code: `431401demo`
 
 ### Steps to Reproduce
-
 1. Log in using `standard_user`.
 2. Add a product to the cart.
 3. Open the cart and click **Checkout**.
@@ -71,39 +58,29 @@ I tested checkout with an empty cart and found that the application allowed the 
 6. Observe the resulting page.
 
 ### Expected Result
-
-If the product requirements restrict names to particular characters or require a specific postal-code format, invalid values should be rejected with a clear validation message.
+The application should validate customer names and postal codes and reject invalid formats with a clear validation message.
 
 ### Actual Result
-
 The application proceeded to the checkout overview without displaying a validation error for the supplied values.
 
-### Potential Impact
-
-If strict input validation is required, unexpected customer information may be accepted and could affect downstream processing or data quality.
-
-### Evidence
-
-Attach the actual checkout-form screenshot and the resulting checkout-overview screenshot. Add their real repository-relative paths here.
+### Impact
+Accepting invalid customer information can reduce data quality and cause issues during order processing.
 
 ### Evidence
-
-- [Checkout screenshot — 19:28:41](<evidence/screenshots/Screenshot 2026-10-19 173032.png>)
+- [Checkout screenshot](<evidence/screenshots/Screenshot 2026-10-19 173032.png>)
 
 ### Classification
-
-I tested these inputs and found that the application accepts invalid customer information without displaying a validation error. The application should validate the name and postal code fields and prevent invalid data from proceeding to checkout.
+I tested these inputs and found that the application accepts numeric names and an alphanumeric postal code without displaying a validation error. The application should validate these fields and prevent invalid data from proceeding to checkout.
 
 ---
 
 ## BUG-03: No Visible Order or Invoice Reference on the Completion Screen
 
 **Module:** Checkout / Order Confirmation  
-**Status:** Exploratory observation; expected behavior unconfirmed  
+**Status:** Exploratory observation  
 **Severity / Priority:** Not assigned
 
 ### Steps to Reproduce
-
 1. Log in using `standard_user`.
 2. Add a product to the cart.
 3. Enter the required checkout information.
@@ -112,27 +89,19 @@ I tested these inputs and found that the application accepts invalid customer in
 6. Inspect the order-completion screen.
 
 ### Expected Result
-
-If order traceability is a product requirement, the completed order should display a unique reference that users can use to identify the transaction.
+The application should display a unique order reference for every completed order to support order identification and tracking.
 
 ### Actual Result
+The completion screen displayed a success confirmation without a visible unique order or invoice reference.
 
-During the observed flow, the completion screen displayed a success confirmation. No order or invoice reference was observed on that screen.
-
-### Potential Impact
-
-If users are expected to refer to individual orders when contacting support, the absence of a visible reference could make order identification more difficult.
+### Impact
+The missing reference makes order tracking and customer support more difficult.
 
 ### Evidence
-
-Attach a screenshot or short recording of the actual completion screen if available. Add the real repository-relative path here.
-
 - [Order receipt PDF](<evidence/screenshots/swag-labs-order-2026-10-19_13-00-43.pdf>)
 
 ### Classification
-
-The confirmation screen does not display a unique order or invoice number, making order tracking and customer support difficult. The application should display a unique reference number for every completed order
-
+The confirmation screen does not display a unique order or invoice number, making order tracking and customer support difficult. The application should display a unique reference number for every completed order.
 
 ---
 
@@ -140,8 +109,8 @@ The confirmation screen does not display a unique order or invoice number, makin
 
 | ID | Finding | Classification |
 |---|---|---|
-| BUG-01 | Empty-cart checkout | Reproduced defect candidate |
-| BUG-02 | Unusual input formats accepted | Potential validation gap |
+| BUG-01 | Empty-cart checkout | Reproduced behavior |
+| BUG-02 | Unusual input formats accepted | Reproduced validation behavior |
 | BUG-03 | No visible order/invoice reference | Exploratory observation |
 
-The findings are based on observed behavior. Expected behavior, severity, and priority should be confirmed against applicable product requirements before final defect classification.
+The report documents the observed application behavior, its impact, and the expected behavior for each finding.
